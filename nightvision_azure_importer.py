@@ -63,7 +63,7 @@ def create_work_item(rule_id,issue_title, issue_description):
         {"op": "add", "path": "/fields/System.Tags", "value": "Security Vulnerability"}
     ]
     response = requests.post(api_url, headers=headers, json=json_data)
-    print(f"Work item created successfully - {rule_id}." if response.status_code == 200 else f"Failed to create work item: {response.text} - {rule_id}")
+    print(f"Work item created successfully - {rule_id}." if response.status_code == 200 else f"Failed to create work item: {rule_id}")
 
 def parse_sarif_and_create_work_items():
     """Parse SARIF file and create work items for each finding."""
